@@ -1,4 +1,6 @@
-class Token {
+package compiler.scanner;
+
+public class Token {
     int tag;
     Object value;
 
@@ -6,4 +8,6 @@ class Token {
         tag = t;
         value = v;
     }
+
+
 }

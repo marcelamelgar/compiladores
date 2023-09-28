@@ -1,3 +1,5 @@
+package compiler.scanner;
+
 class Tag {
     static final int ID = 1;
     static final int NUM = 2;

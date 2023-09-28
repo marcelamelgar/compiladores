@@ -1,4 +1,7 @@
+package compiler.scanner;
+
 import java.io.*;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -25,4 +28,5 @@ public class Main {
 // class Tag {
 //     static final int ID = 256;
 //     static final int NUM = 257;
+
 // }

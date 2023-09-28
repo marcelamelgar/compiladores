@@ -57,7 +57,7 @@ private int getKeywordTokenType(String keyword) {
         return Tag.IF;
     }
 
-    return null; //return null for unrecognized keywords
+    return 0; //return null for unrecognized keywords
     
 }
 %}
