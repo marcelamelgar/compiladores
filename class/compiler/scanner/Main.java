@@ -11,18 +11,18 @@ public class Main {
     }
 }
 
-class Token {
-    int tag;
-    Object value;
+// class Token {
+//     int tag;
+//     Object value;
 
-    Token(int t, Object v) {
-        tag = t;
-        value = v;
-    }
-}
+//     Token(int t, Object v) {
+//         tag = t;
+//         value = v;
+//     }
+// }
 
 
-class Tag {
-    static final int ID = 256;
-    static final int NUM = 257;
-}
+// class Tag {
+//     static final int ID = 256;
+//     static final int NUM = 257;
+// }

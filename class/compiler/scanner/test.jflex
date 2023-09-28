@@ -1,12 +1,5 @@
-/* The consists of three parts, seperated by the %% delimiter.
- * Text up to the first %% is copied verbatim into the created source file.
- * Used for package and import statements. (we don't need any here)
- */
-%%
 
-/* The next section is for options and macros. Things defined here can be used
- * in the next rules section.
- */
+%%
 
 /* The class will be called GeneratedLexer */
 %class GeneratedLexer
@@ -21,7 +14,52 @@
 
 /* Code in the next section is copied into the generated lexer class.
  */
-%{
+  %{
+private boolean isKeyword(String text) {
+    String[] keywords = {"class", "while", "int", "if", "else", "break", "boolean", "void", "for", "return", "true", "false", "continue"};
+    for (String keyword : keywords) {
+        if (keyword.equals(text)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+private int getKeywordTokenType(String keyword) {
+    // Define mappings from keywords to token types here
+    if (keyword.equals("if")) {
+        return Tag.IF;
+    } else if (keyword.equals("while")) {
+        return Tag.WHILE;
+    } else if (keyword.equals("int")) {
+        return Tag.INT;
+    } else if (keyword.equals("class")) {
+        return Tag.CLASS;
+    } else if (keyword.equals("boolean")) {
+        return Tag.BOOLEAN;
+    } else if (keyword.equals("void")) {
+        return Tag.VOID;
+    } else if (keyword.equals("else")) {
+        return Tag.ELSE;
+    } else if (keyword.equals("for")) {
+        return Tag.FOR;
+    } else if (keyword.equals("return")) {
+        return Tag.RETURN;
+    } else if (keyword.equals("true")) {
+        return Tag.TRUE;
+    } else if (keyword.equals("false")) {
+        return Tag.FALSE;
+    } else if (keyword.equals("break")) {
+        return Tag.BREAK;
+    } else if (keyword.equals("continue")) {
+        return Tag.CONTINUE;
+    } else if (keyword.equals("if")) {
+        return Tag.IF;
+    }
+
+    return null; //return null for unrecognized keywords
+    
+}
 %}
 
 /* Here we define some macros, which are abbriviations for regular expressions.
@@ -35,7 +73,6 @@ Identifier = [:jletter:] [:jletterdigit:]*
 
 DecIntegerLiteral = [0-9]
 
-%state STRING
 
 %%
 
@@ -45,57 +82,60 @@ DecIntegerLiteral = [0-9]
  * default. The lexer starts in the <YYINITIAL> state.
  */
 
+  [-+]?[0-9]+                  { return new Token(Tag.NUM, Integer.parseInt(yytext())); }
+  "([^\"\\]|\\[\"ntbrf\\\\])*" { return new Token(Tag.STRING, yytext()); }
 
-  /* Palabras clave */
-  <YYINITIAL> "class"                        { return new Token(Token.CLASS, yytext()); }
-  <YYINITIAL> "if"                           { return new Token(Token.IF, yytext()); }
-  <YYINITIAL> "else"                         { return new Token(Token.ELSE, yytext()); }
-  <YYINITIAL> "while"                        { return new Token(Token.WHILE, yytext()); }
-  <YYINITIAL> "return"                       { return new Token(Token.RETURN, yytext()); }
-  <YYINITIAL> "boolean"                      { return new Token(Token.BOOLEAN, yytext()); }
-  <YYINITIAL> "int"                          { return new Token(Token.INT, yytext()); }
-  <YYINITIAL> "char"                         { return new Token(Token.CHAR, yytext()); }
-  <YYINITIAL> "void"                         { return new Token(Token.VOID, yytext()); }
-  <YYINITIAL> "break"                        { return symbol(sym.BREAK); }
-
+  [a-zA-Z_][a-zA-Z0-9_]* {
+    // Check if the matched text is a keyword or a variable
+    String lexeme = yytext();
+    if (isKeyword(lexeme)) {
+        return new Token(getKeywordTokenType(lexeme), lexeme);
+    } else {
+        return new Token(Tag.ID, lexeme);
+    }
+}
 
 <YYINITIAL> {
-  /* identifiers */
-  {Identifier}                   { return new Token(1,yytext()); }
-  /* use a macro to match integers */
-  {DecIntegerLiteral}            { return new Token(2,Integer.parseInt(yytext())); }
-
 
   /* whitespace */
   {WhiteSpace}                   { /* ignore */ }
 
 
   /* Operadores y delimitadores */
-  "+"                            { return new Token(Token.PLUS, yytext()); }
-  "-"                            { return new Token(Token.MINUS, yytext()); }
-  "*"                            { return new Token(Token.MULTIPLY, yytext()); }
-  "/"                            { return new Token(Token.DIVIDE, yytext()); }
-  "%"                            { return new Token(Token.MODULO, yytext()); }
-  "="                            { return new Token(Token.ASSIGN, yytext()); }
-  "=="                           { return new Token(Token.EQUALS, yytext()); }
-  "!="                           { return new Token(Token.NOT_EQUALS, yytext()); }
-  "<"                            { return new Token(Token.LESS_THAN, yytext()); }
-  "<="                           { return new Token(Token.LESS_THAN_OR_EQUAL, yytext()); }
-  ">"                            { return new Token(Token.GREATER_THAN, yytext()); }
-  ">="                           { return new Token(Token.GREATER_THAN_OR_EQUAL, yytext()); }
-  "&&"                           { return new Token(Token.LOGICAL_AND, yytext()); }
-  "||"                           { return new Token(Token.LOGICAL_OR, yytext()); }
-  "!"                            { return new Token(Token.LOGICAL_NOT, yytext()); }
-  ";"                            { return new Token(Token.SEMICOLON, yytext()); }
-  ","                            { return new Token(Token.COMMA, yytext()); }
-  "("                            { return new Token(Token.LEFT_PAREN, yytext()); }
-  ")"                            { return new Token(Token.RIGHT_PAREN, yytext()); }
-  "{"                            { return new Token(Token.LEFT_BRACE, yytext()); }
-  "}"                            { return new Token(Token.RIGHT_BRACE, yytext()); }
-  "["                            { return new Token(Token.LEFT_BRACKET, yytext()); }
-  "]"                            { return new Token(Token.RIGHT_BRACKET, yytext()); }
+  "+"                            { return new Token(Tag.SUMA, yytext()); }
+  "-"                            { return new Token(Tag.RESTA, yytext()); }
+  "*"                            { return new Token(Tag.MULTI, yytext()); }
+  "/"                            { return new Token(Tag.DIV, yytext()); }
+  "%"                            { return new Token(Tag.MOD, yytext()); }
+  "="                            { return new Token(Tag.ASIG, yytext()); }
+  "=="                           { return new Token(Tag.EQUALS, yytext()); }
+  "!="                           { return new Token(Tag.NOTEQUALS, yytext()); }
+  "<"                            { return new Token(Tag.LESSTHAN, yytext()); }
+  "<="                           { return new Token(Tag.LESSEQUALS, yytext()); }
+  ">"                            { return new Token(Tag.MORETHAN, yytext()); }
+  ">="                           { return new Token(Tag.MOREEQUALS, yytext()); }
+  "&&"                           { return new Token(Tag.AND, yytext()); }
+  "||"                           { return new Token(Tag.OR, yytext()); }
+  "!"                            { return new Token(Tag.NOT, yytext()); }
+  ";"                            { return new Token(Tag.PUNTOCOMA, yytext()); }
+  ","                            { return new Token(Tag.COMA, yytext()); }
+  "("                            { return new Token(Tag.PIZ, yytext()); }
+  ")"                            { return new Token(Tag.PDER, yytext()); }
+  "{"                            { return new Token(Tag.LIZ, yytext()); }
+  "}"                            { return new Token(Tag.LDER, yytext()); }
+  "["                            { return new Token(Tag.CIZ, yytext()); }
+  "]"                            { return new Token(Tag.CDER, yytext()); }
+  "+="                           { return new Token(Tag.SUMEQUAL, yytext()); }
+  "-="                           { return new Token(Tag.MINUSEQUAL, yytext()); }
+  "*="                           { return new Token(Tag.MULTEQUAL, yytext()); }
+  "/="                           { return new Token(Tag.DIVEQUAL, yytext()); }
+  "'" [a-zA-Z0-9] "'"            { return new Token(Tag.CHAR, yytext()); }
+  "//"                           { /* ignore */ }
+
+
 }
 
 /* error fallback */
 [^]                              { throw new LexicalException("Illegal character <" +
                                                     yytext() + ">"); }
+
