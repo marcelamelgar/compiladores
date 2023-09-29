@@ -86,16 +86,8 @@ DecIntegerLiteral = [0-9]
 
   [-+]?[0-9]+                  { return new Token(Token.NUM, Integer.parseInt(yytext())); }
   0x[0-9a-fA-F]+               { return new Token(Token.HEXA, yytext()); }
-  '[^']*'                      {
-                                 String lexeme = yytext();
-                                 String content = lexeme.substring(1, lexeme.length() - 1); // Remove the single quotes
-                                 return new Token(Token.STRING, content);
-                                }
-  "\".\"                        {
-                                 String lexeme = yytext();
-                                 String character = lexeme.substring(1, lexeme.length() - 1); // Remove the double quotes
-                                 return new Token(Token.CHAR, character);
-                                }
+  [a-zA-Z]                     { return new Token(Token.CHAR, yytext()); }
+  \"[^\"]*\"                   { return new Token(Token.STRING, yytext()); }
 
   [a-zA-Z_][a-zA-Z0-9_]* {
     // Check if the matched text is a keyword or a variable
