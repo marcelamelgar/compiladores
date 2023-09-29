@@ -1,12 +1,19 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         GeneratedLexer lexer = new GeneratedLexer(new BufferedReader(new InputStreamReader(System.in)));
+        System.out.println("Ingrese un texto para verificar su lexico:");
         Token token;
-
-        while ((token = lexer.yylex()) != null) {
-            System.out.println("Token: " + token.tag + " Value: " + token.value);
+        try{
+            while ((token = lexer.yylex()) != null) {
+                System.out.println("Token: " + token.tag + " Value: " + token.value);
+            } 
+        } catch (LexicalException lexEx){
+            System.out.println("Lexical Exception detected");
         }
     }
 }

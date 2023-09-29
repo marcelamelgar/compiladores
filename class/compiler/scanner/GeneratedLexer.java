@@ -62,11 +62,11 @@ class GeneratedLexer {
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
     "\11\0\1\1\1\2\1\0\1\1\1\3\22\0\1\1"+
     "\1\4\1\5\2\0\1\6\1\7\1\10\1\11\1\12"+
-    "\1\13\1\14\1\15\1\16\1\0\1\17\12\20\1\0"+
-    "\1\21\1\22\1\23\1\24\2\0\32\25\1\26\1\27"+
-    "\1\30\1\31\1\32\1\0\1\25\1\33\3\25\1\34"+
-    "\7\25\1\35\3\25\1\36\1\25\1\37\6\25\1\40"+
-    "\1\41\1\42\u0182\0";
+    "\1\13\1\14\1\15\1\16\1\0\1\17\1\20\11\21"+
+    "\1\0\1\22\1\23\1\24\1\25\2\0\6\26\24\27"+
+    "\1\30\1\31\1\32\1\33\1\34\1\0\1\26\1\35"+
+    "\3\26\1\36\7\27\1\37\3\27\1\40\1\27\1\41"+
+    "\3\27\1\42\2\27\1\43\1\44\1\45\u0182\0";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[512];
@@ -94,13 +94,14 @@ class GeneratedLexer {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\2\2\1\3\1\4\2\1\1\5\1\6"+
-    "\1\7\1\10\1\11\1\12\1\13\1\14\1\15\1\16"+
+    "\1\7\1\10\1\11\1\12\1\13\2\14\1\15\1\16"+
     "\1\17\1\20\1\21\1\22\1\23\1\24\1\1\1\25"+
-    "\1\26\1\27\2\0\1\30\1\31\1\32\1\33\1\34"+
-    "\1\35\1\36\1\37\1\40\21\0\1\41";
+    "\1\26\1\27\2\0\1\30\1\31\1\32\1\33\1\0"+
+    "\1\34\1\35\1\36\1\37\1\40\1\0\1\41\20\0"+
+    "\1\42";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[57];
+    int [] result = new int[60];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -125,17 +126,17 @@ class GeneratedLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\43\0\43\0\106\0\151\0\43\0\214\0\257"+
-    "\0\322\0\43\0\365\0\u0118\0\43\0\u013b\0\u015e\0\u0181"+
-    "\0\43\0\u01a4\0\u01c7\0\u01ea\0\u020d\0\43\0\43\0\43"+
-    "\0\u0230\0\43\0\43\0\43\0\u0253\0\u0276\0\43\0\43"+
-    "\0\43\0\43\0\43\0\43\0\43\0\43\0\43\0\u0299"+
-    "\0\u02bc\0\u02df\0\u0302\0\u0325\0\u0348\0\u036b\0\u038e\0\u03b1"+
-    "\0\u03d4\0\u03f7\0\u041a\0\u043d\0\u0460\0\u0483\0\u04a6\0\u04c9"+
-    "\0\43";
+    "\0\0\0\46\0\46\0\114\0\162\0\46\0\230\0\276"+
+    "\0\344\0\46\0\u010a\0\u0130\0\46\0\u0156\0\u017c\0\u01a2"+
+    "\0\u01c8\0\46\0\u01ee\0\u0214\0\u023a\0\u0260\0\46\0\46"+
+    "\0\46\0\u0286\0\46\0\46\0\46\0\u02ac\0\u02d2\0\46"+
+    "\0\46\0\46\0\46\0\u02f8\0\46\0\46\0\46\0\46"+
+    "\0\46\0\u031e\0\u02f8\0\u0344\0\u036a\0\u0390\0\u03b6\0\u03dc"+
+    "\0\u0402\0\u0428\0\u044e\0\u0474\0\u049a\0\u04c0\0\u04e6\0\u050c"+
+    "\0\u0532\0\u0558\0\u057e\0\46";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[57];
+    int [] result = new int[60];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -160,21 +161,23 @@ class GeneratedLexer {
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\2\3\1\4\1\5\1\2\1\6\1\7\1\10"+
     "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\1\21\1\22\1\23\1\24\1\25\1\26\1\2\1\27"+
-    "\1\2\6\25\1\30\1\31\1\32\45\0\1\3\63\0"+
-    "\1\33\26\0\1\34\53\0\1\35\4\0\1\35\5\0"+
-    "\5\35\31\0\1\36\37\0\1\37\37\0\1\20\2\0"+
-    "\1\40\37\0\1\20\2\0\1\41\36\0\1\3\3\0"+
-    "\1\42\37\0\1\20\45\0\1\43\42\0\1\44\42\0"+
-    "\1\45\37\0\1\25\4\0\1\25\4\0\6\25\44\0"+
-    "\1\46\11\0\1\47\63\0\1\50\16\0\1\51\64\0"+
-    "\1\52\43\0\1\53\53\0\1\54\30\0\1\55\41\0"+
-    "\1\56\21\0\1\57\72\0\1\60\44\0\1\61\36\0"+
-    "\1\62\45\0\1\63\40\0\1\64\35\0\1\65\42\0"+
-    "\1\66\43\0\1\67\24\0\1\70\43\0\1\71\27\0";
+    "\1\21\1\22\1\23\1\24\1\25\2\26\1\27\1\2"+
+    "\1\30\1\2\7\26\1\31\1\32\1\33\50\0\1\3"+
+    "\67\0\1\34\30\0\1\35\56\0\2\36\4\0\2\36"+
+    "\5\0\6\36\33\0\1\37\41\0\1\40\41\0\2\21"+
+    "\2\0\1\41\41\0\2\21\2\0\1\42\40\0\1\3"+
+    "\4\0\1\43\41\0\2\21\20\0\1\44\23\0\2\21"+
+    "\50\0\1\45\45\0\1\46\45\0\1\47\41\0\2\26"+
+    "\4\0\2\26\4\0\7\26\47\0\1\50\11\0\1\51"+
+    "\70\0\1\52\32\0\2\53\4\0\1\53\6\0\2\53"+
+    "\14\0\1\54\71\0\1\55\46\0\1\56\57\0\1\57"+
+    "\32\0\1\60\44\0\1\61\22\0\1\62\77\0\1\63"+
+    "\47\0\1\64\41\0\1\65\50\0\1\66\43\0\1\67"+
+    "\40\0\1\70\45\0\1\71\46\0\1\72\25\0\1\73"+
+    "\46\0\1\74\32\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[1260];
+    int [] result = new int[1444];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -218,11 +221,11 @@ class GeneratedLexer {
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\2\11\2\1\1\11\3\1\1\11\2\1\1\11"+
-    "\3\1\1\11\4\1\3\11\1\1\3\11\2\0\11\11"+
-    "\21\0\1\11";
+    "\4\1\1\11\4\1\3\11\1\1\3\11\2\0\4\11"+
+    "\1\0\5\11\1\0\1\1\20\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[57];
+    int [] result = new int[60];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -303,7 +306,7 @@ class GeneratedLexer {
 
   /* user code: */
 private boolean isKeyword(String text) {
-    String[] keywords = {"class", "while", "int", "if", "else", "break", "boolean", "void", "for", "return", "true", "false", "continue"};
+    String[] keywords = {"class", "while", "int", "if", "else", "break", "boolean", "void", "for", "return", "true", "false", "continue","callout"};
     for (String keyword : keywords) {
         if (keyword.equals(text)) {
             return true;
@@ -315,36 +318,38 @@ private boolean isKeyword(String text) {
 private int getKeywordTokenType(String keyword) {
     // Define mappings from keywords to token types here
     if (keyword.equals("if")) {
-        return Tag.IF;
+        return Token.IF;
     } else if (keyword.equals("while")) {
-        return Tag.WHILE;
+        return Token.WHILE;
     } else if (keyword.equals("int")) {
-        return Tag.INT;
+        return Token.INT;
     } else if (keyword.equals("class")) {
-        return Tag.CLASS;
+        return Token.CLASS;
     } else if (keyword.equals("boolean")) {
-        return Tag.BOOLEAN;
+        return Token.BOOLEAN;
     } else if (keyword.equals("void")) {
-        return Tag.VOID;
+        return Token.VOID;
     } else if (keyword.equals("else")) {
-        return Tag.ELSE;
+        return Token.ELSE;
     } else if (keyword.equals("for")) {
-        return Tag.FOR;
+        return Token.FOR;
     } else if (keyword.equals("return")) {
-        return Tag.RETURN;
+        return Token.RETURN;
     } else if (keyword.equals("true")) {
-        return Tag.TRUE;
+        return Token.TRUE;
     } else if (keyword.equals("false")) {
-        return Tag.FALSE;
+        return Token.FALSE;
     } else if (keyword.equals("break")) {
-        return Tag.BREAK;
+        return Token.BREAK;
     } else if (keyword.equals("continue")) {
-        return Tag.CONTINUE;
+        return Token.CONTINUE;
     } else if (keyword.equals("if")) {
-        return Tag.IF;
-    }
+        return Token.IF;
+    } else if (keyword.equals("callout")) {
+        return Token.CALLOUT;
+    }    
 
-    return null; //return null for unrecognized keywords
+    return 0; //return null for unrecognized keywords
     
 }
 
@@ -708,173 +713,178 @@ private int getKeywordTokenType(String keyword) {
                                                     yytext() + ">");
             }
           // fall through
-          case 34: break;
+          case 35: break;
           case 2:
             { /* ignore */
             }
           // fall through
-          case 35: break;
-          case 3:
-            { return new Token(Tag.NOT, yytext());
-            }
-          // fall through
           case 36: break;
-          case 4:
-            { return new Token(Tag.MOD, yytext());
+          case 3:
+            { return new Token(Token.NOT, yytext());
             }
           // fall through
           case 37: break;
-          case 5:
-            { return new Token(Tag.PIZ, yytext());
+          case 4:
+            { return new Token(Token.MOD, yytext());
             }
           // fall through
           case 38: break;
-          case 6:
-            { return new Token(Tag.PDER, yytext());
+          case 5:
+            { return new Token(Token.PIZ, yytext());
             }
           // fall through
           case 39: break;
-          case 7:
-            { return new Token(Tag.MULTI, yytext());
+          case 6:
+            { return new Token(Token.PDER, yytext());
             }
           // fall through
           case 40: break;
-          case 8:
-            { return new Token(Tag.SUMA, yytext());
+          case 7:
+            { return new Token(Token.MULTI, yytext());
             }
           // fall through
           case 41: break;
-          case 9:
-            { return new Token(Tag.COMA, yytext());
+          case 8:
+            { return new Token(Token.SUMA, yytext());
             }
           // fall through
           case 42: break;
-          case 10:
-            { return new Token(Tag.RESTA, yytext());
+          case 9:
+            { return new Token(Token.COMA, yytext());
             }
           // fall through
           case 43: break;
-          case 11:
-            { return new Token(Tag.DIV, yytext());
+          case 10:
+            { return new Token(Token.RESTA, yytext());
             }
           // fall through
           case 44: break;
-          case 12:
-            { return new Token(Tag.NUM, Integer.parseInt(yytext()));
+          case 11:
+            { return new Token(Token.DIV, yytext());
             }
           // fall through
           case 45: break;
-          case 13:
-            { return new Token(Tag.PUNTOCOMA, yytext());
+          case 12:
+            { return new Token(Token.NUM, Integer.parseInt(yytext()));
             }
           // fall through
           case 46: break;
-          case 14:
-            { return new Token(Tag.LESSTHAN, yytext());
+          case 13:
+            { return new Token(Token.PUNTOCOMA, yytext());
             }
           // fall through
           case 47: break;
-          case 15:
-            { return new Token(Tag.ASIG, yytext());
+          case 14:
+            { return new Token(Token.LESSTHAN, yytext());
             }
           // fall through
           case 48: break;
-          case 16:
-            { return new Token(Tag.MORETHAN, yytext());
+          case 15:
+            { return new Token(Token.ASIG, yytext());
             }
           // fall through
           case 49: break;
+          case 16:
+            { return new Token(Token.MORETHAN, yytext());
+            }
+          // fall through
+          case 50: break;
           case 17:
             { // Check if the matched text is a keyword or a variable
     String lexeme = yytext();
     if (isKeyword(lexeme)) {
         return new Token(getKeywordTokenType(lexeme), lexeme);
     } else {
-        return new Token(Tag.ID, lexeme);
+        return new Token(Token.ID, lexeme);
     }
             }
           // fall through
-          case 50: break;
-          case 18:
-            { return new Token(Tag.CIZ, yytext());
-            }
-          // fall through
           case 51: break;
-          case 19:
-            { return new Token(Tag.CDER, yytext());
+          case 18:
+            { return new Token(Token.CIZ, yytext());
             }
           // fall through
           case 52: break;
-          case 20:
-            { return new Token(Tag.LIZ, yytext());
+          case 19:
+            { return new Token(Token.CDER, yytext());
             }
           // fall through
           case 53: break;
-          case 21:
-            { return new Token(Tag.LDER, yytext());
+          case 20:
+            { return new Token(Token.LIZ, yytext());
             }
           // fall through
           case 54: break;
-          case 22:
-            { return new Token(Tag.NOTEQUALS, yytext());
+          case 21:
+            { return new Token(Token.LDER, yytext());
             }
           // fall through
           case 55: break;
-          case 23:
-            { return new Token(Tag.AND, yytext());
+          case 22:
+            { return new Token(Token.NOTEQUALS, yytext());
             }
           // fall through
           case 56: break;
-          case 24:
-            { return new Token(Tag.MULTEQUAL, yytext());
+          case 23:
+            { return new Token(Token.AND, yytext());
             }
           // fall through
           case 57: break;
-          case 25:
-            { return new Token(Tag.SUMEQUAL, yytext());
+          case 24:
+            { return new Token(Token.MULTEQUAL, yytext());
             }
           // fall through
           case 58: break;
-          case 26:
-            { return new Token(Tag.MINUSEQUAL, yytext());
+          case 25:
+            { return new Token(Token.SUMEQUAL, yytext());
             }
           // fall through
           case 59: break;
-          case 27:
-            { return new Token(Tag.DIVEQUAL, yytext());
+          case 26:
+            { return new Token(Token.MINUSEQUAL, yytext());
             }
           // fall through
           case 60: break;
-          case 28:
-            { return new Token(Tag.LESSEQUALS, yytext());
+          case 27:
+            { return new Token(Token.DIVEQUAL, yytext());
             }
           // fall through
           case 61: break;
-          case 29:
-            { return new Token(Tag.EQUALS, yytext());
+          case 28:
+            { return new Token(Token.LESSEQUALS, yytext());
             }
           // fall through
           case 62: break;
-          case 30:
-            { return new Token(Tag.MOREEQUALS, yytext());
+          case 29:
+            { return new Token(Token.EQUALS, yytext());
             }
           // fall through
           case 63: break;
-          case 31:
-            { return new Token(Tag.OR, yytext());
+          case 30:
+            { return new Token(Token.MOREEQUALS, yytext());
             }
           // fall through
           case 64: break;
-          case 32:
-            { return new Token(Tag.CHAR, yytext());
+          case 31:
+            { return new Token(Token.OR, yytext());
             }
           // fall through
           case 65: break;
-          case 33:
-            { return new Token(Tag.STRING, yytext());
+          case 32:
+            { return new Token(Token.CHAR, yytext());
             }
           // fall through
           case 66: break;
+          case 33:
+            { return new Token(Token.HEXA, yytext());
+            }
+          // fall through
+          case 67: break;
+          case 34:
+            { return new Token(Token.STRING, yytext());
+            }
+          // fall through
+          case 68: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }
