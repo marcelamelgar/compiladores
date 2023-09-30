@@ -83,62 +83,169 @@ DecIntegerLiteral = [0-9]
  * is performed. The action is java code. The regex matches longest match by
  * default. The lexer starts in the <YYINITIAL> state.
  */
-
-  [-+]?[0-9]+                  { return new Token(Token.NUM, Integer.parseInt(yytext())); }
-  0x[0-9a-fA-F]+               { return new Token(Token.HEXA, yytext()); }
-  [a-zA-Z]                     { return new Token(Token.CHAR, yytext()); }
-  \"[^\"]*\"                   { return new Token(Token.STRING, yytext()); }
+  \n {
+    currentRow++;
+    currentCol = 1;
+  }
+  [-+]?[0-9]+                   { 
+                                    currentCol++;
+                                    return new Token(Token.NUM, currentRow, currentCol, Integer.parseInt(yytext())); 
+                                }
+  0x[0-9a-fA-F]+                { 
+                                    currentCol++;
+                                    return new Token(Token.HEXA, currentRow, currentCol, yytext()); 
+                                }
+  [a-zA-Z]                      { 
+                                    currentCol++;
+                                    return new Token(Token.CHAR, currentRow, currentCol, yytext()); 
+                                }
+  \"[^\"]*\"                    {
+                                    currentCol++;  
+                                    return new Token(Token.STRING, currentRow, currentCol, yytext()); 
+                                }
+  [0-9][a-zA-Z0-9_]*            {
+                                    currentCol++;  
+                                    return new Token(Token.ERROR, currentRow, currentCol, yytext());
+                                }
 
   [a-zA-Z_][a-zA-Z0-9_]* {
     // Check if the matched text is a keyword or a variable
     String lexeme = yytext();
     if (isKeyword(lexeme)) {
-        return new Token(getKeywordTokenType(lexeme), lexeme);
+        currentCol++;  
+        return new Token(getKeywordTokenType(lexeme), currentRow, currentCol,lexeme);
     } else {
-        return new Token(Token.ID, lexeme);
+        currentCol++;  
+        return new Token(Token.ID, currentRow, currentCol,lexeme);
     }
 }
 
 <YYINITIAL> {
 
   /* whitespace */
-  {WhiteSpace}                   { /* ignore */ }
+  {WhiteSpace}                   { currentCol++; }
 
 
   /* Operadores y delimitadores */
-  "+"                            { return new Token(Token.SUMA, yytext()); }
-  "-"                            { return new Token(Token.RESTA, yytext()); }
-  "*"                            { return new Token(Token.MULTI, yytext()); }
-  "/"                            { return new Token(Token.DIV, yytext()); }
-  "%"                            { return new Token(Token.MOD, yytext()); }
-  "="                            { return new Token(Token.ASIG, yytext()); }
-  "=="                           { return new Token(Token.EQUALS, yytext()); }
-  "!="                           { return new Token(Token.NOTEQUALS, yytext()); }
-  "<"                            { return new Token(Token.LESSTHAN, yytext()); }
-  "<="                           { return new Token(Token.LESSEQUALS, yytext()); }
-  ">"                            { return new Token(Token.MORETHAN, yytext()); }
-  ">="                           { return new Token(Token.MOREEQUALS, yytext()); }
-  "&&"                           { return new Token(Token.AND, yytext()); }
-  "||"                           { return new Token(Token.OR, yytext()); }
-  "!"                            { return new Token(Token.NOT, yytext()); }
-  ";"                            { return new Token(Token.PUNTOCOMA, yytext()); }
-  ","                            { return new Token(Token.COMA, yytext()); }
-  "("                            { return new Token(Token.PIZ, yytext()); }
-  ")"                            { return new Token(Token.PDER, yytext()); }
-  "{"                            { return new Token(Token.LIZ, yytext()); }
-  "}"                            { return new Token(Token.LDER, yytext()); }
-  "["                            { return new Token(Token.CIZ, yytext()); }
-  "]"                            { return new Token(Token.CDER, yytext()); }
-  "+="                           { return new Token(Token.SUMEQUAL, yytext()); }
-  "-="                           { return new Token(Token.MINUSEQUAL, yytext()); }
-  "*="                           { return new Token(Token.MULTEQUAL, yytext()); }
-  "/="                           { return new Token(Token.DIVEQUAL, yytext()); }
-  "//"(.)*\n?                    { return new Token(Token.SCOMMENT, yytext()); }
+  "+"                           { 
+                                    currentCol++;   
+                                    return new Token(Token.SUMA, currentRow, currentCol, yytext()); 
+                                }
+  "-"                           { 
+                                    currentCol++;   
+                                    return new Token(Token.RESTA, currentRow, currentCol, yytext()); 
+                                }
+  "*"                           { 
+                                    currentCol++;   
+                                    return new Token(Token.MULTI, currentRow, currentCol, yytext()); 
+                                }
+  "/"                           { 
+                                    currentCol++;
+                                    return new Token(Token.DIV, currentRow, currentCol, yytext()); 
+                                }
+  "%"                           { 
+                                    currentCol++;
+                                    return new Token(Token.MOD, currentRow, currentCol, yytext()); 
+                                }
+  "="                           { 
+                                    currentCol++;
+                                    return new Token(Token.ASIG, currentRow, currentCol, yytext()); 
+                                }
+  "=="                          { 
+                                    currentCol++;
+                                    return new Token(Token.EQUALS, currentRow, currentCol, yytext()); 
+                                }
+  "!="                          { 
+                                    currentCol++;
+                                    return new Token(Token.NOTEQUALS, currentRow, currentCol, yytext()); 
+                                }
+  "<"                           { 
+                                    currentCol++;
+                                    return new Token(Token.LESSTHAN, currentRow, currentCol, yytext()); 
+                                }
+  "<="                          { 
+                                    currentCol++;
+                                    return new Token(Token.LESSEQUALS, currentRow, currentCol, yytext()); 
+                                }
+  ">"                           { 
+                                    currentCol++;
+                                    return new Token(Token.MORETHAN, currentRow, currentCol, yytext()); 
+                                }
+  ">="                          {
+                                    currentCol++; 
+                                    return new Token(Token.MOREEQUALS, currentRow, currentCol, yytext()); 
+                                }
+  "&&"                          { 
+                                    currentCol++;
+                                    return new Token(Token.AND, currentRow, currentCol, yytext()); 
+                                }
+  "||"                          { 
+                                    currentCol++;
+                                    return new Token(Token.OR, currentRow, currentCol, yytext()); 
+                                }
+  "!"                           { 
+                                    currentCol++;
+                                    return new Token(Token.NOT, currentRow, currentCol, yytext()); 
+                                }
+  ";"                           { 
+                                    currentCol++;
+                                    return new Token(Token.PUNTOCOMA, currentRow, currentCol, yytext()); 
+                                }
+  ","                           { 
+                                    currentCol++;
+                                    return new Token(Token.COMA, currentRow, currentCol, yytext()); 
+                                }
+  "("                           { 
+                                    currentCol++;
+                                    return new Token(Token.PIZ, currentRow, currentCol, yytext()); 
+                                }
+  ")"                           { 
+                                    currentCol++;
+                                    return new Token(Token.PDER, currentRow, currentCol, yytext()); 
+                                }
+  "{"                           { 
+
+                                    return new Token(Token.LIZ, currentRow, currentCol, yytext()); 
+                                }
+  "}"                           { 
+                                    currentCol++;
+                                    return new Token(Token.LDER, currentRow, currentCol, yytext()); 
+                                }
+  "["                           { 
+                                    currentCol++;
+                                    return new Token(Token.CIZ, currentRow, currentCol, yytext()); 
+                                }
+  "]"                           {
+                                    currentCol++;
+                                    return new Token(Token.CDER, currentRow, currentCol, yytext()); 
+                                }
+  "+="                          { 
+                                    currentCol++;
+                                    return new Token(Token.SUMEQUAL, currentRow, currentCol, yytext()); 
+                                }
+  "-="                          { 
+                                    currentCol++;
+                                    return new Token(Token.MINUSEQUAL, currentRow, currentCol, yytext()); 
+                                }
+  "*="                          { 
+                                    currentCol++;
+                                    return new Token(Token.MULTEQUAL, currentRow, currentCol, yytext()); 
+                                }
+  "/="                          { 
+                                    currentCol++;
+                                    return new Token(Token.DIVEQUAL, currentRow, currentCol, yytext()); 
+                                }
+  "//"(.)*\n?                   { 
+                                    currentCol++;
+                                    return new Token(Token.SCOMMENT, currentRow, currentCol, yytext()); 
+                                }
 
 
 }
 
 /* error fallback */
-[^]                              { throw new LexicalException("Illegal character <" +
-                                                    yytext() + ">"); }
+[^]                             { 
+                                    currentCol++;
+                                    return new Token(Token.ERROR, currentRow, currentCol, yytext()); 
+                                }
 

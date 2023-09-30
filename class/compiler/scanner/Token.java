@@ -47,14 +47,36 @@ class Token {
     static final int DIVEQUAL = 45;
     static final int CALLOUT = 46;
     static final int HEXA = 47;
+    static final int ERROR = 48;
 
     int tag;
+    int row;
+    int col;
     Object value;
 
-    Token(int t, Object v) {
-        tag = t;
-        value = v;
+    Token(int t, int row, int col, Object v) {
+        this.tag = t;
+        this.row = row;
+        this.col = col;
+        this.value = v;
     }
 
+    public String displayToken(){
+        return "\nToken TAG: " + this.tag + "\nValue: "+ this.value + "\nFound in line " + this.row + " column " + this.col + "\n";
+    }
 
+    public String displayErrors(){
+         return "\nValue: "+ this.value + "\nError found in line " + this.row + " column " + this.col + "\n";
+    }
+
+}
+
+class ErrorMessg extends Token {
+    ErrorMessg(int t, int row, int col, Object v) {
+        super(t, row, col, v);
+    }
+
+    public String DisplayError(){
+        return "Syntax error in line " + this.row + " column " + this.col + "\n     Unexpected value: " + this.value;
+    }
 }
