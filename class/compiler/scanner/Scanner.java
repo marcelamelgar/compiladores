@@ -1,7 +1,9 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.LinkedList;
+import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Scanner {
     String fileName;
@@ -46,4 +48,23 @@ public class Scanner {
         }
     }
 
+    public File writeDataToCSVFile(){
+        File csvFile = new File("tokenTable.csv");
+        String[] headers = {"type", "row", "column", "value"};
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(csvFile))){
+            for (String header : headers){
+                 writer.write(header);
+                 writer.write(",");
+            }
+            writer.newLine();
+            for (Token token : TokenList){
+                writer.write(token.csvFormat());
+                writer.newLine();
+            }
+            
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return csvFile;
+    }
 }

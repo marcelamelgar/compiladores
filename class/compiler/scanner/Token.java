@@ -65,6 +65,10 @@ class Token {
         return "\nToken TAG: " + this.tag + "\nValue: "+ this.value + "\nFound in line " + this.row + " column " + this.col + "\n";
     }
 
+    public String csvFormat(){
+        return this.tag + "," + this.row + "," + this.col + "," + this.value;
+    }
+
     public String displayErrors(){
          return "\nValue: "+ this.value + "\nError found in line " + this.row + " column " + this.col + "\n";
     }
