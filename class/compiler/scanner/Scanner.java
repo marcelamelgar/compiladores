@@ -10,7 +10,7 @@ public class Scanner {
     LinkedList <Token> TokenList = new LinkedList<>();
     LinkedList <Token> ErrorList = new LinkedList<>();
 
-    Scanner(String fileName){
+    public Scanner(String fileName){
         this.fileName = fileName;
     }
 
