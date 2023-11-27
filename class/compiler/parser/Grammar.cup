@@ -1,0 +1,140 @@
+import java_cup.runtime.*;
+
+// Define terminals
+terminal Class, Program, Void, Int, Boolean, If, Else, For, Return, Break, Continue, 
+    True, False, 
+    Asign, AsignAdd, AsignSubs, Add, Substract, Multiplication, Division, 
+    LessThan, GreaterThan, LessEqualThan, GreaterEqualThan, Equal, NotEqual, And, Or, 
+    SemiColom, LeftParent, RightParent, LeftBracket, RightBracket, LeftKey, RightKey,
+    ParentOpenClose, KeyOpenClose, Callout, Exclam, Comma;
+
+terminal String StringLiteral, CharLiteral, Id, HexLiteral, DecimalLiteral;
+
+// Define non-terminals
+non terminal INICIO, PROGRAM, PROGRAM_FIELD_DECL, PROGRAM_METHOD_DECL, FIELD_DECL, DECL,
+    FIELD_CLOSE, METHOD_DECL, M_DECL, BLOCK, BLOCK_VAR_DECL, BLOCK_STATEMENT, VAR_DECL, 
+    VAR_ID, TYPE, STATEMENT, ELSE_BLOCK, RETURN_EXPR, ASSIGN_OP, METHOD_CALL, METHOD_CALL_EXPR, 
+    METHOD_CALL_CALLOUT, METHOD_NAME, LOCATION, LOCATION_EXPR, EXPR, CALLOUT_ARG, BIN_OP, 
+    LITERAL, INT_LITERAL, BOOL_LITERAL;
+
+// Define precedences
+precedence left Add, Substract, Multiplication, Division, LessThan, GreaterThan, LessEqualThan, 
+GreaterEqualThan, Equal, NotEqual, And, Or;
+
+// Define start symbol
+start with INICIO;
+
+// Grammar rules
+INICIO ::= PROGRAM;
+
+PROGRAM ::= Class Program KeyOpenClose
+          | Class Program LeftKey PROGRAM_FIELD_DECL;
+
+PROGRAM_FIELD_DECL ::= FIELD_DECL PROGRAM_FIELD_DECL
+                     | METHOD_DECL PROGRAM_METHOD_DECL
+                     | RightKey;
+
+PROGRAM_METHOD_DECL ::= METHOD_DECL PROGRAM_METHOD_DECL
+                      | RightKey;
+
+FIELD_DECL ::= TYPE DECL;
+
+DECL ::= Id FIELD_CLOSE 
+       | Id LeftBracket INT_LITERAL RightBracket FIELD_CLOSE;
+
+FIELD_CLOSE ::= Comma DECL
+              | SemiColom;
+
+METHOD_DECL ::= TYPE Id LeftParent M_DECL
+              | Void Id LeftParent M_DECL
+              | TYPE Id ParentOpenClose BLOCK
+              | Void Id ParentOpenClose BLOCK;
+
+M_DECL ::= TYPE Id RightParent BLOCK
+         | TYPE Id Comma M_DECL;
+
+BLOCK ::= KeyOpenClose
+        | LeftKey BLOCK_VAR_DECL;
+
+BLOCK_VAR_DECL ::= VAR_DECL BLOCK_VAR_DECL
+                 | STATEMENT BLOCK_STATEMENT
+                 | RightKey;
+
+BLOCK_STATEMENT ::= STATEMENT BLOCK_STATEMENT
+                  | RightKey;
+
+VAR_DECL ::= TYPE VAR_ID;
+
+VAR_ID ::= Id Comma VAR_ID
+         | Id SemiColom;
+
+TYPE ::= Int
+       | Boolean;
+
+STATEMENT ::= LOCATION ASSIGN_OP EXPR SemiColom
+            | METHOD_CALL SemiColom
+            | If LeftParent EXPR RightParent BLOCK ELSE_BLOCK
+            | For Id Asign EXPR Comma EXPR BLOCK
+            | Return RETURN_EXPR
+            | Break SemiColom
+            | Continue SemiColom
+            | BLOCK;
+
+ELSE_BLOCK ::= Else BLOCK
+             | ;
+
+RETURN_EXPR ::= EXPR SemiColom
+              | SemiColom;
+
+ASSIGN_OP ::= Asign
+            | AsignAdd
+            | AsignSubs;
+
+METHOD_CALL ::= METHOD_NAME ParentOpenClose
+              | METHOD_NAME LeftParent METHOD_CALL_EXPR
+              | Callout LeftParent StringLiteral RightParent
+              | Callout LeftParent StringLiteral METHOD_CALL_CALLOUT;
+
+METHOD_CALL_EXPR ::= EXPR Comma METHOD_CALL_EXPR
+                   | EXPR RightParent;
+
+METHOD_CALL_CALLOUT ::= CALLOUT_ARG Comma METHOD_CALL_CALLOUT
+                      | CALLOUT_ARG RightParent;
+
+METHOD_NAME ::= Id;
+
+LOCATION ::= Id LOCATION_EXPR;
+
+LOCATION_EXPR ::= LeftBracket EXPR RightBracket
+                | ;
+
+EXPR ::= LOCATION
+       | METHOD_CALL
+       | LITERAL
+       | EXPR BIN_OP EXPR
+       | Substract EXPR
+       | Exclam EXPR
+       | LeftParent EXPR RightParent
+       | EXPR Add EXPR
+       | EXPR Multiplication EXPR
+       | EXPR LessThan EXPR
+       | EXPR GreaterThan EXPR
+       | EXPR Equal EXPR
+       | EXPR Division EXPR
+       | EXPR NotEqual EXPR
+       | EXPR And EXPR
+       | EXPR Or EXPR
+       | EXPR LessEqualThan EXPR
+       | EXPR GreaterEqualThan EXPR;
+
+LITERAL ::= INT_LITERAL
+        | BOOL_LITERAL
+        | CharLiteral;
+
+BOOL_LITERAL ::= True
+               | False;
+
+INT_LITERAL ::= DecimalLiteral
+              | HexLiteral;
+
+CALLOUT_ARG ::= EXPR;
