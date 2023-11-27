@@ -61,13 +61,13 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
     "\11\0\1\1\1\2\1\3\2\2\22\0\1\1\1\4"+
     "\1\5\3\0\1\6\1\7\1\10\1\11\1\12\1\13"+
-    "\1\14\1\15\1\0\1\16\1\17\11\20\1\0\1\21"+
-    "\1\22\1\23\1\24\2\0\6\25\24\26\1\27\1\30"+
-    "\1\31\1\0\1\26\1\0\1\32\1\33\1\34\1\35"+
-    "\1\36\1\37\2\26\1\40\1\26\1\41\1\42\1\26"+
-    "\1\43\1\44\2\26\1\45\1\46\1\47\1\50\1\51"+
-    "\1\26\1\52\2\26\1\53\1\54\1\55\7\0\1\3"+
-    "\u01a2\0\2\3\326\0\u0100\3";
+    "\1\14\1\15\1\16\1\17\1\20\11\21\1\0\1\22"+
+    "\1\23\1\24\1\25\2\0\6\26\6\27\1\30\15\27"+
+    "\1\31\1\32\1\33\1\0\1\27\1\0\1\34\1\35"+
+    "\1\36\1\37\1\40\1\41\2\27\1\42\1\27\1\43"+
+    "\1\44\1\27\1\45\1\46\2\27\1\47\1\50\1\51"+
+    "\1\52\1\53\1\27\1\54\2\27\1\55\1\56\1\57"+
+    "\7\0\1\3\u01a2\0\2\3\326\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -95,13 +95,16 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\3\1\1\4\1\5\1\6"+
-    "\1\7\1\10\1\11\1\12\2\13\1\14\1\15\1\16"+
-    "\1\17\1\20\1\21\1\22\10\20\1\23\1\1\1\24"+
-    "\1\25\1\0\1\26\1\27\3\0\1\30\1\31\1\32"+
-    "\7\20\1\33\4\20\1\34\1\35\1\36\22\20";
+    "\1\7\1\10\1\11\1\12\1\13\2\14\1\15\1\16"+
+    "\1\17\1\20\2\21\1\22\1\23\10\21\1\24\1\1"+
+    "\1\25\1\26\1\0\1\27\1\30\3\0\1\31\1\32"+
+    "\1\33\11\21\1\34\4\21\1\35\1\36\1\37\10\21"+
+    "\1\40\1\41\3\21\1\42\5\21\1\43\2\21\1\44"+
+    "\1\45\1\21\1\46\1\21\1\47\1\21\1\50\4\21"+
+    "\1\51\1\52\1\53\1\21\1\54";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[77];
+    int [] result = new int[102];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -126,19 +129,22 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\56\0\134\0\212\0\270\0\346\0\u0114\0\56"+
-    "\0\56\0\56\0\56\0\56\0\56\0\56\0\u0142\0\u0170"+
-    "\0\56\0\u019e\0\u01cc\0\u01fa\0\u0228\0\56\0\56\0\u0256"+
-    "\0\u0284\0\u02b2\0\u02e0\0\u030e\0\u033c\0\u036a\0\u0398\0\56"+
-    "\0\u03c6\0\56\0\56\0\270\0\56\0\56\0\u03f4\0\u0422"+
-    "\0\u0450\0\56\0\56\0\56\0\u047e\0\u04ac\0\u04da\0\u0508"+
-    "\0\u0536\0\u0564\0\u0592\0\u0228\0\u05c0\0\u05ee\0\u061c\0\u064a"+
-    "\0\56\0\56\0\u0450\0\u0678\0\u06a6\0\u06d4\0\u0702\0\u0730"+
-    "\0\u075e\0\u078c\0\u07ba\0\u07e8\0\u0816\0\u0844\0\u0872\0\u08a0"+
-    "\0\u08ce\0\u08fc\0\u092a\0\u0958\0\u0986";
+    "\0\0\0\60\0\140\0\220\0\300\0\360\0\u0120\0\60"+
+    "\0\60\0\60\0\60\0\60\0\60\0\60\0\60\0\u0150"+
+    "\0\u0180\0\60\0\u01b0\0\u01e0\0\u0210\0\u0240\0\u0270\0\60"+
+    "\0\60\0\u02a0\0\u02d0\0\u0300\0\u0330\0\u0360\0\u0390\0\u03c0"+
+    "\0\u03f0\0\60\0\u0420\0\60\0\60\0\300\0\60\0\60"+
+    "\0\u0450\0\u0480\0\u04b0\0\60\0\60\0\60\0\u04e0\0\u0510"+
+    "\0\u0540\0\u0570\0\u05a0\0\u05d0\0\u0600\0\u0630\0\u0660\0\u0240"+
+    "\0\u0690\0\u06c0\0\u06f0\0\u0720\0\60\0\60\0\u04b0\0\u0750"+
+    "\0\u0780\0\u07b0\0\u07e0\0\u0810\0\u0840\0\u0870\0\u08a0\0\u0240"+
+    "\0\u0240\0\u08d0\0\u0900\0\u0930\0\u0240\0\u0960\0\u0990\0\u09c0"+
+    "\0\u09f0\0\u0a20\0\u0240\0\u0a50\0\u0a80\0\u0240\0\u0240\0\u0ab0"+
+    "\0\u0240\0\u0ae0\0\u0240\0\u0b10\0\u0240\0\u0b40\0\u0b70\0\u0ba0"+
+    "\0\u0bd0\0\u0240\0\u0240\0\u0240\0\u0c00\0\u0240";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[77];
+    int [] result = new int[102];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -163,56 +169,67 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\2\3\1\0\1\4\1\5\1\6\1\7\1\10"+
     "\1\11\1\12\1\13\1\14\1\15\1\16\1\17\1\20"+
-    "\1\21\1\22\1\23\1\24\2\25\1\26\1\2\1\27"+
-    "\1\25\1\30\1\31\1\25\1\32\1\33\1\34\4\25"+
-    "\1\35\1\25\1\36\1\25\1\37\1\25\1\40\1\41"+
-    "\1\42\57\0\2\3\76\0\1\43\32\0\5\44\1\45"+
-    "\50\44\6\0\1\46\47\0\7\47\1\0\20\47\1\50"+
-    "\25\47\17\0\2\20\31\0\1\51\22\0\2\20\60\0"+
-    "\1\52\55\0\1\53\55\0\1\54\51\0\2\25\4\0"+
-    "\2\25\3\0\21\25\22\0\2\25\4\0\2\25\3\0"+
-    "\12\25\1\55\1\56\5\25\22\0\2\25\4\0\2\25"+
-    "\3\0\1\57\7\25\1\60\1\25\1\61\6\25\22\0"+
-    "\2\25\4\0\2\25\3\0\10\25\1\62\10\25\22\0"+
-    "\2\25\4\0\2\25\3\0\1\32\11\25\1\63\6\25"+
-    "\22\0\2\25\4\0\2\25\3\0\5\25\1\64\3\25"+
-    "\1\65\7\25\22\0\2\25\4\0\2\25\3\0\4\25"+
-    "\1\66\14\25\22\0\2\25\4\0\2\25\3\0\13\25"+
-    "\1\67\5\25\22\0\2\25\4\0\2\25\3\0\12\25"+
-    "\1\70\6\25\57\0\1\71\10\0\1\72\46\0\2\47"+
-    "\2\0\52\47\17\0\2\73\4\0\1\73\4\0\6\73"+
-    "\35\0\2\25\4\0\2\25\3\0\12\25\1\74\6\25"+
-    "\22\0\2\25\4\0\2\25\3\0\4\25\1\75\14\25"+
-    "\22\0\2\25\4\0\2\25\3\0\10\25\1\76\10\25"+
-    "\22\0\2\25\4\0\2\25\3\0\1\77\20\25\22\0"+
-    "\2\25\4\0\2\25\3\0\11\25\1\100\7\25\22\0"+
-    "\2\25\4\0\2\25\3\0\14\25\1\101\4\25\22\0"+
-    "\2\25\4\0\2\25\3\0\13\25\1\64\5\25\22\0"+
-    "\2\25\4\0\2\25\3\0\15\25\1\64\3\25\22\0"+
-    "\2\25\4\0\2\25\3\0\15\25\1\102\3\25\22\0"+
-    "\2\25\4\0\2\25\3\0\16\25\1\101\2\25\22\0"+
-    "\2\25\4\0\2\25\3\0\6\25\1\103\12\25\22\0"+
-    "\2\25\4\0\2\25\3\0\10\25\1\104\10\25\22\0"+
-    "\2\25\4\0\2\25\3\0\1\105\20\25\22\0\2\25"+
-    "\4\0\2\25\3\0\10\25\1\106\10\25\22\0\2\25"+
-    "\4\0\2\25\3\0\14\25\1\107\4\25\22\0\2\25"+
-    "\4\0\2\25\3\0\15\25\1\110\3\25\22\0\2\25"+
-    "\4\0\2\25\3\0\4\25\1\64\14\25\22\0\2\25"+
-    "\4\0\2\25\3\0\16\25\1\111\2\25\22\0\2\25"+
-    "\4\0\2\25\3\0\3\25\1\64\15\25\22\0\2\25"+
-    "\4\0\2\25\3\0\4\25\1\112\14\25\22\0\2\25"+
-    "\4\0\2\25\3\0\7\25\1\64\11\25\22\0\2\25"+
-    "\4\0\2\25\3\0\12\25\1\113\6\25\22\0\2\25"+
-    "\4\0\2\25\3\0\14\25\1\64\4\25\22\0\2\25"+
-    "\4\0\2\25\3\0\6\25\1\114\12\25\22\0\2\25"+
-    "\4\0\2\25\3\0\13\25\1\115\5\25\22\0\2\25"+
-    "\4\0\2\25\3\0\1\115\20\25\22\0\2\25\4\0"+
-    "\2\25\3\0\16\25\1\65\2\25\22\0\2\25\4\0"+
-    "\2\25\3\0\11\25\1\67\7\25\22\0\2\25\4\0"+
-    "\2\25\3\0\11\25\1\64\7\25\3\0";
+    "\1\21\1\22\1\23\1\24\1\25\2\26\1\27\1\30"+
+    "\1\2\1\31\1\26\1\32\1\33\1\26\1\34\1\35"+
+    "\1\36\4\26\1\37\1\26\1\40\1\26\1\41\1\26"+
+    "\1\42\1\43\1\44\61\0\2\3\101\0\1\45\33\0"+
+    "\5\46\1\47\52\46\6\0\1\50\51\0\7\51\1\0"+
+    "\22\51\1\52\25\51\20\0\2\21\32\0\1\53\23\0"+
+    "\2\21\62\0\1\54\57\0\1\55\57\0\1\56\53\0"+
+    "\2\26\4\0\3\26\3\0\21\26\23\0\2\26\4\0"+
+    "\3\26\3\0\1\57\20\26\23\0\2\26\4\0\3\26"+
+    "\3\0\12\26\1\60\1\61\5\26\23\0\2\26\4\0"+
+    "\3\26\3\0\1\62\7\26\1\63\1\26\1\64\6\26"+
+    "\23\0\2\26\4\0\3\26\3\0\10\26\1\65\10\26"+
+    "\23\0\2\26\4\0\3\26\3\0\1\66\11\26\1\67"+
+    "\6\26\23\0\2\26\4\0\3\26\3\0\5\26\1\70"+
+    "\3\26\1\71\7\26\23\0\2\26\4\0\3\26\3\0"+
+    "\4\26\1\72\14\26\23\0\2\26\4\0\3\26\3\0"+
+    "\13\26\1\73\5\26\23\0\2\26\4\0\3\26\3\0"+
+    "\12\26\1\74\6\26\61\0\1\75\10\0\1\76\50\0"+
+    "\2\51\2\0\54\51\20\0\2\77\4\0\1\77\5\0"+
+    "\6\77\36\0\2\26\4\0\3\26\3\0\6\26\1\100"+
+    "\12\26\23\0\2\26\4\0\3\26\3\0\12\26\1\101"+
+    "\6\26\23\0\2\26\4\0\3\26\3\0\4\26\1\102"+
+    "\14\26\23\0\2\26\4\0\3\26\3\0\10\26\1\103"+
+    "\10\26\23\0\2\26\4\0\3\26\3\0\1\104\20\26"+
+    "\23\0\2\26\4\0\3\26\3\0\11\26\1\105\7\26"+
+    "\23\0\2\26\4\0\3\26\3\0\14\26\1\106\4\26"+
+    "\23\0\2\26\4\0\3\26\3\0\10\26\1\107\10\26"+
+    "\23\0\2\26\4\0\3\26\3\0\13\26\1\110\5\26"+
+    "\23\0\2\26\4\0\3\26\3\0\15\26\1\111\3\26"+
+    "\23\0\2\26\4\0\3\26\3\0\15\26\1\112\3\26"+
+    "\23\0\2\26\4\0\3\26\3\0\16\26\1\113\2\26"+
+    "\23\0\2\26\4\0\3\26\3\0\6\26\1\114\12\26"+
+    "\23\0\2\26\4\0\3\26\3\0\11\26\1\115\7\26"+
+    "\23\0\2\26\4\0\3\26\3\0\10\26\1\116\10\26"+
+    "\23\0\2\26\4\0\3\26\3\0\1\117\20\26\23\0"+
+    "\2\26\4\0\3\26\3\0\10\26\1\120\10\26\23\0"+
+    "\2\26\4\0\3\26\3\0\14\26\1\121\4\26\23\0"+
+    "\2\26\4\0\3\26\3\0\15\26\1\122\3\26\23\0"+
+    "\2\26\4\0\3\26\3\0\4\26\1\123\14\26\23\0"+
+    "\2\26\4\0\3\26\3\0\14\26\1\124\4\26\23\0"+
+    "\2\26\4\0\3\26\3\0\16\26\1\125\2\26\23\0"+
+    "\2\26\4\0\3\26\3\0\4\26\1\126\14\26\23\0"+
+    "\2\26\4\0\3\26\3\0\3\26\1\127\15\26\23\0"+
+    "\2\26\4\0\3\26\3\0\4\26\1\130\14\26\23\0"+
+    "\2\26\4\0\3\26\3\0\7\26\1\131\11\26\23\0"+
+    "\2\26\4\0\3\26\3\0\12\26\1\132\6\26\23\0"+
+    "\2\26\4\0\3\26\3\0\14\26\1\133\4\26\23\0"+
+    "\2\26\4\0\3\26\3\0\6\26\1\134\12\26\23\0"+
+    "\2\26\4\0\3\26\3\0\4\26\1\135\14\26\23\0"+
+    "\2\26\4\0\3\26\3\0\13\26\1\136\5\26\23\0"+
+    "\2\26\4\0\3\26\3\0\1\137\20\26\23\0\2\26"+
+    "\4\0\3\26\3\0\16\26\1\140\2\26\23\0\2\26"+
+    "\4\0\3\26\3\0\11\26\1\141\7\26\23\0\2\26"+
+    "\4\0\3\26\3\0\11\26\1\142\7\26\23\0\2\26"+
+    "\4\0\3\26\3\0\11\26\1\143\7\26\23\0\2\26"+
+    "\4\0\3\26\3\0\15\26\1\144\3\26\23\0\2\26"+
+    "\4\0\3\26\3\0\16\26\1\145\2\26\23\0\2\26"+
+    "\4\0\3\26\3\0\4\26\1\146\14\26\3\0";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[2484];
+    int [] result = new int[3120];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -255,12 +272,12 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\5\1\7\11\2\1\1\11\4\1\2\11"+
+    "\1\0\1\11\5\1\10\11\2\1\1\11\5\1\2\11"+
     "\10\1\1\11\1\1\2\11\1\0\2\11\3\0\3\11"+
-    "\14\1\2\11\23\1";
+    "\16\1\2\11\50\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[77];
+    int [] result = new int[102];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -340,49 +357,6 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
     // Row and Column tracking if needed
     int currentRow = 1;
     int currentCol = 1;
-
-    private boolean isKeyword(String text) {
-    String[] keywords = {"class", "int", "if", "else", "break", "boolean", "void", "for", "return", "true", "false", "continue","callout"};
-    for (String keyword : keywords) {
-        if (keyword.equals(text)) {
-            return true;
-        }
-    }
-    return false;
-    }
-
-    private int getKeywordTokenType(String keyword) {
-    switch (keyword) {
-        case "if":
-            return Sym.If;
-        case "int":
-            return Sym.Int;
-        case "class":
-            return Sym.Class;
-        case "boolean":
-            return Sym.Boolean;
-        case "void":
-            return Sym.Void;
-        case "else":
-            return Sym.Else;
-        case "for":
-            return Sym.For;
-        case "return":
-            return Sym.Return;
-        case "true":
-            return Sym.True;
-        case "false":
-            return Sym.False;
-        case "break":
-            return Sym.Break;
-        case "continue":
-            return Sym.Continue;
-        case "callout":
-            return Sym.Callout;
-        default:
-            return 0; // Return 0 or an appropriate error code for unrecognized keywords
-        }
-    }
 
 
 
@@ -815,179 +789,222 @@ class GeneratedLexer implements java_cup.runtime.Scanner {
             { throw new IllegalArgumentException("Illegal character <" + yytext() + ">");
             }
           // fall through
-          case 31: break;
+          case 45: break;
           case 2:
             { /* Ignore white space */
             }
           // fall through
-          case 32: break;
+          case 46: break;
           case 3:
             { return new java_cup.runtime.Symbol(Sym.Exclam, yyline, yycolumn, yytext());
             }
           // fall through
-          case 33: break;
+          case 47: break;
           case 4:
             { return new java_cup.runtime.Symbol(Sym.LeftParent, yyline, yycolumn, yytext());
             }
           // fall through
-          case 34: break;
+          case 48: break;
           case 5:
             { return new java_cup.runtime.Symbol(Sym.RightParent, yyline, yycolumn, yytext());
             }
           // fall through
-          case 35: break;
+          case 49: break;
           case 6:
             { return new java_cup.runtime.Symbol(Sym.Multiplication, yyline, yycolumn, yytext());
             }
           // fall through
-          case 36: break;
+          case 50: break;
           case 7:
             { return new java_cup.runtime.Symbol(Sym.Add, yyline, yycolumn, yytext());
             }
           // fall through
-          case 37: break;
+          case 51: break;
           case 8:
             { return new java_cup.runtime.Symbol(Sym.Comma, yyline, yycolumn, yytext());
             }
           // fall through
-          case 38: break;
+          case 52: break;
           case 9:
             { return new java_cup.runtime.Symbol(Sym.Substract, yyline, yycolumn, yytext());
             }
           // fall through
-          case 39: break;
-          case 10:
-            { return new java_cup.runtime.Symbol(Sym.Division, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 40: break;
-          case 11:
-            { return new java_cup.runtime.Symbol(Sym.DecimalLiteral, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 41: break;
-          case 12:
-            { return new java_cup.runtime.Symbol(Sym.SemiColom, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 42: break;
-          case 13:
-            { return new java_cup.runtime.Symbol(Sym.LessThan, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 43: break;
-          case 14:
-            { return new java_cup.runtime.Symbol(Sym.Asign, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 44: break;
-          case 15:
-            { return new java_cup.runtime.Symbol(Sym.GreaterThan, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 45: break;
-          case 16:
-            { return new java_cup.runtime.Symbol(Sym.Id, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 46: break;
-          case 17:
-            { return new java_cup.runtime.Symbol(Sym.LeftBracket, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 47: break;
-          case 18:
-            { return new java_cup.runtime.Symbol(Sym.RightBracket, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 48: break;
-          case 19:
-            { return new java_cup.runtime.Symbol(Sym.LeftKey, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 49: break;
-          case 20:
-            { return new java_cup.runtime.Symbol(Sym.RightKey, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 50: break;
-          case 21:
-            { return new java_cup.runtime.Symbol(Sym.NotEqual, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 51: break;
-          case 22:
-            { return new java_cup.runtime.Symbol(Sym.StringLiteral, yyline, yycolumn, yytext());
-            }
-          // fall through
-          case 52: break;
-          case 23:
-            { return new java_cup.runtime.Symbol(Sym.And, yyline, yycolumn, yytext());
-            }
-          // fall through
           case 53: break;
-          case 24:
-            { return new java_cup.runtime.Symbol(Sym.LessEqualThan, yyline, yycolumn, yytext());
+          case 10:
+            { return new java_cup.runtime.Symbol(Sym.Dot, yyline, yycolumn, yytext());
             }
           // fall through
           case 54: break;
-          case 25:
-            { return new java_cup.runtime.Symbol(Sym.Equal, yyline, yycolumn, yytext());
+          case 11:
+            { return new java_cup.runtime.Symbol(Sym.Division, yyline, yycolumn, yytext());
             }
           // fall through
           case 55: break;
-          case 26:
-            { return new java_cup.runtime.Symbol(Sym.GreaterEqualThan, yyline, yycolumn, yytext());
+          case 12:
+            { return new java_cup.runtime.Symbol(Sym.DecimalLiteral, yyline, yycolumn, yytext());
             }
           // fall through
           case 56: break;
-          case 27:
-            { switch (yytext()) {
-        case "class":
-            return new java_cup.runtime.Symbol(Sym.Class, yyline, yycolumn);
-        case "int":
-            return new java_cup.runtime.Symbol(Sym.Int, yyline, yycolumn);
-        case "if":
-            return new java_cup.runtime.Symbol(Sym.If, yyline, yycolumn);
-        case "else":
-            return new java_cup.runtime.Symbol(Sym.Else, yyline, yycolumn);
-        case "break":
-            return new java_cup.runtime.Symbol(Sym.Break, yyline, yycolumn);
-        case "boolean":
-            return new java_cup.runtime.Symbol(Sym.Boolean, yyline, yycolumn);
-        case "for":
-            return new java_cup.runtime.Symbol(Sym.For, yyline, yycolumn);
-        case "return":
-            return new java_cup.runtime.Symbol(Sym.Return, yyline, yycolumn);
-        case "true":
-            return new java_cup.runtime.Symbol(Sym.True, yyline, yycolumn);
-        case "false":
-            return new java_cup.runtime.Symbol(Sym.False, yyline, yycolumn);
-        case "continue":
-            return new java_cup.runtime.Symbol(Sym.Continue, yyline, yycolumn);
-        case "callout":
-            return new java_cup.runtime.Symbol(Sym.Callout, yyline, yycolumn);
-        default:
-            throw new IllegalArgumentException("Unknown keyword: " + yytext());
-    }
+          case 13:
+            { return new java_cup.runtime.Symbol(Sym.SemiColom, yyline, yycolumn, yytext());
             }
           // fall through
           case 57: break;
-          case 28:
-            { return new java_cup.runtime.Symbol(Sym.Or, yyline, yycolumn, yytext());
+          case 14:
+            { return new java_cup.runtime.Symbol(Sym.LessThan, yyline, yycolumn, yytext());
             }
           // fall through
           case 58: break;
-          case 29:
-            { return new java_cup.runtime.Symbol(Sym.CharLiteral, yyline, yycolumn, yytext());
+          case 15:
+            { return new java_cup.runtime.Symbol(Sym.Asign, yyline, yycolumn, yytext());
             }
           // fall through
           case 59: break;
-          case 30:
-            { return new java_cup.runtime.Symbol(Sym.HexLiteral, yyline, yycolumn, yytext());
+          case 16:
+            { return new java_cup.runtime.Symbol(Sym.GreaterThan, yyline, yycolumn, yytext());
             }
           // fall through
           case 60: break;
+          case 17:
+            { return new java_cup.runtime.Symbol(Sym.Id, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 61: break;
+          case 18:
+            { return new java_cup.runtime.Symbol(Sym.LeftBracket, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 62: break;
+          case 19:
+            { return new java_cup.runtime.Symbol(Sym.RightBracket, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 63: break;
+          case 20:
+            { return new java_cup.runtime.Symbol(Sym.LeftKey, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 64: break;
+          case 21:
+            { return new java_cup.runtime.Symbol(Sym.RightKey, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 65: break;
+          case 22:
+            { return new java_cup.runtime.Symbol(Sym.NotEqual, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 66: break;
+          case 23:
+            { return new java_cup.runtime.Symbol(Sym.StringLiteral, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 67: break;
+          case 24:
+            { return new java_cup.runtime.Symbol(Sym.And, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 68: break;
+          case 25:
+            { return new java_cup.runtime.Symbol(Sym.LessEqualThan, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 69: break;
+          case 26:
+            { return new java_cup.runtime.Symbol(Sym.Equal, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 70: break;
+          case 27:
+            { return new java_cup.runtime.Symbol(Sym.GreaterEqualThan, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 71: break;
+          case 28:
+            { return new java_cup.runtime.Symbol(Sym.If, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 72: break;
+          case 29:
+            { return new java_cup.runtime.Symbol(Sym.Or, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 73: break;
+          case 30:
+            { return new java_cup.runtime.Symbol(Sym.CharLiteral, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 74: break;
+          case 31:
+            { return new java_cup.runtime.Symbol(Sym.HexLiteral, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 75: break;
+          case 32:
+            { return new java_cup.runtime.Symbol(Sym.For, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 76: break;
+          case 33:
+            { return new java_cup.runtime.Symbol(Sym.Int, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 77: break;
+          case 34:
+            { return new java_cup.runtime.Symbol(Sym.Program, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 78: break;
+          case 35:
+            { return new java_cup.runtime.Symbol(Sym.Else, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 79: break;
+          case 36:
+            { return new java_cup.runtime.Symbol(Sym.True, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 80: break;
+          case 37:
+            { return new java_cup.runtime.Symbol(Sym.Void, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 81: break;
+          case 38:
+            { return new java_cup.runtime.Symbol(Sym.Break, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 82: break;
+          case 39:
+            { return new java_cup.runtime.Symbol(Sym.Class, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 83: break;
+          case 40:
+            { return new java_cup.runtime.Symbol(Sym.False, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 84: break;
+          case 41:
+            { return new java_cup.runtime.Symbol(Sym.Return, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 85: break;
+          case 42:
+            { return new java_cup.runtime.Symbol(Sym.Boolean, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 86: break;
+          case 43:
+            { return new java_cup.runtime.Symbol(Sym.Callout, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 87: break;
+          case 44:
+            { return new java_cup.runtime.Symbol(Sym.Continue, yyline, yycolumn, yytext());
+            }
+          // fall through
+          case 88: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

@@ -15,17 +15,17 @@ public class Sym {
   public static final int SemiColom = 30;
   public static final int LeftKey = 35;
   public static final int If = 7;
-  public static final int DecimalLiteral = 46;
-  public static final int Id = 44;
+  public static final int DecimalLiteral = 48;
+  public static final int Id = 46;
   public static final int ParentOpenClose = 37;
   public static final int Void = 4;
   public static final int GreaterThan = 23;
   public static final int Equal = 26;
-  public static final int CharLiteral = 43;
+  public static final int CharLiteral = 45;
   public static final int LeftBracket = 33;
   public static final int Else = 8;
   public static final int Break = 11;
-  public static final int StringLiteral = 42;
+  public static final int StringLiteral = 44;
   public static final int AsignAdd = 16;
   public static final int RightBracket = 34;
   public static final int AsignSubs = 17;
@@ -35,7 +35,7 @@ public class Sym {
   public static final int Division = 21;
   public static final int Int = 5;
   public static final int LessEqualThan = 24;
-  public static final int HexLiteral = 45;
+  public static final int HexLiteral = 47;
   public static final int For = 9;
   public static final int EOF = 0;
   public static final int Asign = 15;
@@ -43,9 +43,11 @@ public class Sym {
   public static final int error = 1;
   public static final int GreaterEqualThan = 25;
   public static final int False = 14;
+  public static final int ERROR = 42;
   public static final int KeyOpenClose = 38;
   public static final int RightParent = 32;
   public static final int Continue = 12;
+  public static final int Dot = 43;
   public static final int LessThan = 22;
   public static final int Callout = 39;
   public static final int Add = 18;
@@ -96,6 +98,8 @@ public class Sym {
   "Callout",
   "Exclam",
   "Comma",
+  "ERROR",
+  "Dot",
   "StringLiteral",
   "CharLiteral",
   "Id",

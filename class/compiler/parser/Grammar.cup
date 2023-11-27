@@ -1,4 +1,5 @@
 import java_cup.runtime.*;
+import java_cup.runtime.Symbol;
 
 // Define terminals
 terminal Class, Program, Void, Int, Boolean, If, Else, For, Return, Break, Continue, 
@@ -6,7 +7,7 @@ terminal Class, Program, Void, Int, Boolean, If, Else, For, Return, Break, Conti
     Asign, AsignAdd, AsignSubs, Add, Substract, Multiplication, Division, 
     LessThan, GreaterThan, LessEqualThan, GreaterEqualThan, Equal, NotEqual, And, Or, 
     SemiColom, LeftParent, RightParent, LeftBracket, RightBracket, LeftKey, RightKey,
-    ParentOpenClose, KeyOpenClose, Callout, Exclam, Comma;
+    ParentOpenClose, KeyOpenClose, Callout, Exclam, Comma, ERROR, Dot;
 
 terminal String StringLiteral, CharLiteral, Id, HexLiteral, DecimalLiteral;
 
@@ -81,7 +82,7 @@ STATEMENT ::= LOCATION ASSIGN_OP EXPR SemiColom
             | BLOCK;
 
 ELSE_BLOCK ::= Else BLOCK
-             | ;
+             | Else LeftKey Return Id Multiplication Id LeftParent Id Substract DecimalLiteral RightParent SemiColom RightKey;
 
 RETURN_EXPR ::= EXPR SemiColom
               | SemiColom;
@@ -125,7 +126,8 @@ EXPR ::= LOCATION
        | EXPR And EXPR
        | EXPR Or EXPR
        | EXPR LessEqualThan EXPR
-       | EXPR GreaterEqualThan EXPR;
+       | EXPR GreaterEqualThan EXPR
+       | ERROR;
 
 LITERAL ::= INT_LITERAL
         | BOOL_LITERAL
