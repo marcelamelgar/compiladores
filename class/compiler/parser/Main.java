@@ -21,13 +21,16 @@ public class Main {
                     System.err.println("Syntax error at line " + line + ", column " + column + ": Unexpected token " + symbol.value);
                     // Optionally, throw an exception or exit the program
                 } else {
+                    if(getSymbolName(symbol.sym) == "EOF"){
+                        System.out.println("No hay errores en el parser.");
+                    }
                     System.out.println("Token: " + getSymbolName(symbol.sym) + ", Value: " + symbol.value);
                 }
             }
         } catch (IOException e) {
             System.err.println("Error reading file: " + e.getMessage());
         } catch (Exception e) {
-            System.err.println("Error during parsing: " + e.getMessage());
+            System.err.println("Error during analisis: " + e.getMessage());
         }
     }
 
